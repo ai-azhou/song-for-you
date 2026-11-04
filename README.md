@@ -38,6 +38,8 @@ npx skills add ai-azhou/song-for-you
 - 「写首歌送我妈，她今年退休。」
 - 「帮这段歌词做成歌：……」
 
+给了歌单或歌手时，它会先说能查哪些资料、各有什么用、大约要多久，请你勾要查哪几类；不能联网时会照实说，请你选是让它凭原有知识补，还是你补几样基本信息。
+
 没说「你定」时，它先给 2–3 个方向让你选，选好再写词；想省事就回「你定」。
 
 ## 它不会做的事
@@ -63,7 +65,11 @@ python3 skills/song-for-you/scripts/to_suno.py 写歌说明.json --out Suno-粘�
 
 ## 测过的 AI 助手
 
-发布前在 Claude Code、Codex、OpenCode（Kimi 模型）和 DeepSeek Harness 上各跑了两轮全量测试（每家 11 道题），网页版在 Kimi、DeepSeek 上跑过，两轮都没有出现越过底线的问题。已知：Codex 有时会在回复里提到它在用这个 Skill，或者解释它为什么停下来等你选，不影响结果。
+v1.0 发布前在 Claude Code、Codex、OpenCode（Kimi 模型）和 DeepSeek Harness 上各跑了两轮全量测试（每家 11 道题），网页版在 Kimi、DeepSeek 上跑过，两轮都没有出现越过底线的问题。
+
+v1.1 加了「先问查哪些资料」这一步，在这四家上又跑了全量回归（每家 13 道题）和网页版，另在 Claude Code、Codex、OpenCode 上模拟了不能联网的情况。第一轮发现一处：有一次 Claude Code 没有调用这个 Skill，已改描述修好，复测通过；第二轮已跑完的部分没有越过底线的问题，Kimi 有几道题没跑完。
+
+已知：Codex 有时会在回复里提到它在用这个 Skill，或者解释它为什么停下来等你选，不影响结果。
 
 ## 许可与致谢
 
